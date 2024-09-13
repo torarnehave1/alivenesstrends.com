@@ -12,6 +12,11 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 
+    # Serve static files
+    location /static/ {
+        alias /var/www/html/alivenesstrends.com/public/static/;
+    }
+
     # Deny access to .htaccess files
     location ~ /\.ht {
         deny all;
